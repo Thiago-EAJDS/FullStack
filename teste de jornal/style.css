@@ -1,0 +1,273 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+}
+
+.logo {
+    max-height: 100px;
+    width: auto;
+}
+
+.home-button {
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 15px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
+
+.noticias {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+    flex: 1; 
+}
+
+.noticia {
+    background: white;
+    padding: 0;
+    margin: 10px;
+    width: 80%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.15s ease-in-out; 
+}
+
+.noticia:hover { 
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); 
+}
+
+.noticia a:hover {
+    text-decoration: underline;
+}
+
+.noticia-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+}
+
+.noticia-content {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    overflow: hidden; 
+}
+
+.noticia-img {
+    width: 150px;
+    height: 100px;
+    border: 2px solid #333;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.noticia-texto {
+    flex: 1;
+}
+
+.noticia-texto h2 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.noticia-texto p {
+    margin: 5px 0 0;
+    color: #666;
+}
+
+.navegacao-noticias {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.navegacao-noticias a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.navegacao-noticias a:hover {
+    text-decoration: underline;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.navegacao-lateral {
+    position: static;
+    top: 20px;
+    right: 20px;
+    width: 235px;
+    min-width: 235px;
+    max-width: 235px;
+    background-color: #ffffff;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 10;
+}
+
+.navegacao-lateral h3 {
+    margin-top: 0;
+}
+
+.navegacao-lateral .noticia-previa {
+    margin-bottom: 15px;
+}
+
+.navegacao-lateral .previa-img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.navegacao-lateral .previa-resumo {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+}
+
+.navegacao-lateral a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.navegacao-lateral a:hover {
+    text-decoration: underline;
+}
+
+.imagem-destacada {
+    display: block;
+    margin: 20px auto;
+    max-width: 35%;
+    border: 5px solid #888;
+    padding: 5px;
+    background: #f8f8f8;
+}
+
+.voltar-home {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.voltar-home a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.voltar-home a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.imagem-inicial {
+    max-width: 100%; 
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.imagem-inicial:hover {
+    transform: scale(1.05);
+}
+
+.imagem-lateral {
+    flex-shrink: 0; 
+    max-width: 35%; 
+    display: flex;
+    justify-content: center; 
+}
+
+.popup {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#popup-img-container {
+    background-color: none;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative; 
+}
+
+#popup-img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 5px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ffffff;  
+    color: rgb(0, 0, 0);
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 5px 10px;  
+}
+
+.close-btn:hover {
+    background-color: #cc0000; 
+    color: white;
+}
+
+.textos-in-page {
+    background: #ffffff;
+    padding: 0;
+    margin-right: 10px;
+    width: 90%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px
+}
+
+.textos-in-page p {
+    margin-left: 40px; 
+    text-indent: 15px;
+    max-width: 93%;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 110%
+}
+
+.textos-in-page h2 {
+    margin-left: 40px;
+    max-width: 93%;
+    font-family: "Georgia", serif;
+}
