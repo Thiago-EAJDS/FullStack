@@ -3,12 +3,14 @@ body {
     text-align: center;
     background-color: #f0f0f0;
 }
+
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
 }
+
 .game-button {
     text-decoration: none;
     background-color: #007bff;
@@ -18,6 +20,27 @@ body {
     border-radius: 5px;
     display: inline-block;
 }
+
 .game-button:hover {
     background-color: #0056b3;
 }
+
+.home-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #007bff;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.home-button:hover{
+    background-color: #0056b3;
+}
+
+.home-button a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
