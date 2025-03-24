@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #141414;
+    position: relative;
+}
+
+.imagem-fundo {
+    position: absolute;
+    top: -10;
+    right: 10;
+    width: 35%;
+    height: 65%;
+    background: url('mamaco\ banana-Photoroom.png') center/cover no-repeat; 
+    z-index: 1; 
+    opacity: 40%;
+}
+
+.cartao {
+    width: 450px;
+    height: 250px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.info {
+    width: 100%;
+    font-family: sans-serif;
+    z-index: 1;
+}
+
+.info p {
+    font-size: 23px;
+    margin-bottom: 5px;
+}
+
+.info p span {
+    font-weight: bold;
+}
+
+.nome {
+    font-size: 30px; 
+    font-weight: bold;
+    display: block;
+    margin-bottom: 65px;
+}
+
+.decoracao {
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(to top left, rgb(255, 123, 0), purple);
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
