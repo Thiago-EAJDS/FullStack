@@ -21,24 +21,11 @@ document.querySelector("button").addEventListener("click", ()=>{
     btnConcluir.addEventListener("click", ()=>{
         item.classList.toggle("concluido");
     })
-
-    const btnDesconcluir = document.createElement("button");
-    btnConcluir.textContent = "Desconcluir";
-    btnConcluir.addEventListener("click", ()=>{
-        item.classList.toggle("concluido");
-        item.classList.toggle("desconcluido");
-    })
-
-    item.appendChild(btnDesconcluir);
+    
     item.appendChild(btnConcluir);
     item.appendChild(btnExcluir);
 
     document.getElementById("minhas-tarefas").appendChild(item);
 
     nomeTarefa.value = "";
-
-
-
-
-
 })
