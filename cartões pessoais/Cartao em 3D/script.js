@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const darkModeToggle = document.getElementById("darkModeToggle");
     const cartao = document.getElementById("cartao");
-    const frente = document.querySelector(".frente");
-    const verso = document.querySelector(".verso");
     const body = document.body;
     const icon = document.getElementById("icon");
     let isFlipped = false;
@@ -11,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
     darkModeToggle.addEventListener("click", () => {
         body.classList.toggle("dark-mode");
         cartao.classList.toggle("dark-mode");
-        darkModeToggle.classList.toggle("dark-mode-button");
 
         icon.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
     });
@@ -19,8 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Alternar rotação do cartão (frente e verso)
     cartao.addEventListener("click", () => {
         isFlipped = !isFlipped;
-        cartao.style.transform = isFlipped ? "rotateY(180deg)" : "rotateY(0deg)";
-
+        cartao.classList.toggle("flipped", isFlipped);
     });
 
     // Efeito 3D ao mover o mouse
@@ -33,11 +29,16 @@ document.addEventListener("DOMContentLoaded", () => {
         let rotateX = -(offsetY / 5);
         let rotateY = offsetX / 5;
 
-        cartao.style.transform = `rotateY(${isFlipped ? 180 - rotateY : rotateY}deg) rotateX(${isFlipped ? -rotateX : rotateX}deg)`;
+        if (isFlipped) {
+            rotateX = -rotateX;
+            rotateY = 180 - rotateY;
+        }
+
+        cartao.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
     });
 
     // Resetar rotação ao sair do cartão
     cartao.addEventListener("mouseleave", () => {
-        cartao.style.transform = isFlipped ? "rotateY(180deg) rotateX(0deg)" : "rotateY(0deg) rotateX(0deg)";
+        cartao.style.transform = isFlipped ? "rotateY(180deg)" : "rotateY(0deg)";
     });
 });

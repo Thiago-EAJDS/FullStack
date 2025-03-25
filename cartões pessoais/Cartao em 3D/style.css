@@ -1,3 +1,4 @@
+/* Reset de estilos básicos */
 * {
     margin: 0;
     padding: 0;
@@ -14,6 +15,7 @@ body {
     position: relative;
 }
 
+/* Botão de alternância do modo escuro */
 button {
     position: absolute;
     top: 20px;
@@ -33,11 +35,6 @@ button {
     transition: transform 0.3s, background 0.3s;
 }
 
-#icon {
-    width: 100%;
-    height: 100%;
-}
-
 button:hover {
     transform: scale(1.1);
 }
@@ -47,15 +44,69 @@ button:hover {
     color: black;
 }
 
-.cartao .info {
-    width: 100%;
-    font-family: sans-serif;
-    z-index: 1;
-    color: black;
-    transition: color 0.3s;
+/* Container do cartão */
+.cartao-wrapper {
+    perspective: 1500px;
 }
 
-.cartao .info p {
+.cartao {
+    width: 450px;
+    height: 250px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+/* Alterna a rotação ao clicar */
+.cartao.flipped {
+    transform: rotateY(180deg);
+}
+
+/* Faces do cartão */
+.cartao-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Garante que o lado oposto não fique visível */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* Frente do cartão */
+.frente {
+    background: linear-gradient(to top left, rgb(255, 123, 0), purple);
+}
+
+/* Verso do cartão */
+.verso {
+    background: linear-gradient(to top left, rgb(255, 123, 0), purple);
+    transform: rotateY(180deg);
+}
+
+/* Estilização da imagem do macaco */
+.imagem-fundo {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    width: 35%;
+    height: 65%;
+    background: url('mamaco\ banana-Photoroom.png') center/cover no-repeat;
+    opacity: 40%;
+}
+
+/* Informações do cartão */
+.info {
+    width: 100%;
+    font-family: sans-serif;
+    color: black;
+    text-align: left;
+    padding: 20px;
+}
+
+.info p {
     font-size: 23px;
     padding-left: 17px; 
 }
@@ -67,79 +118,21 @@ button:hover {
     margin-bottom: 65px;
 }
 
-.imagem-fundo {
-    position: absolute;
-    top: -10px;
-    right: 10px;
-    width: 35%;
-    height: 65%;
-    background: url('mamaco\ banana-Photoroom.png') center/cover no-repeat;
-    z-index: 1;
-    opacity: 40%;
+/* Estilização específica para a parte de trás */
+.verso .info {
+    color: white;
+    text-align: center;
 }
 
-.decoracao {
-    position: absolute;
-    width: 100%;
-    height: 250px;
-    background: linear-gradient(to top left, rgb(255, 123, 0), purple);
-    top: 0;
-    left: 0;
-    z-index: 0;
-    border-radius: 8px;
-}
-
+/* Modo Escuro */
 .dark-mode {
-    background-color: #121212;
+    background: #1e1e1e;
 }
 
 .dark-mode .cartao {
-    box-shadow: 0 4px 8px white;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.8);
 }
 
-.dark-mode-text {
-    color: white !important;
-}
-
-.cartao-wrapper {
-    perspective: 1500px;
-}
-
-.cartao {
-    width: 450px;
-    height: 250px;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
-    position: relative;
-    margin: 0;
-    background: rgba(0, 0, 0, 0.5);
-    transition: transform 0.5s ease-in-out;
-    transform-style: preserve-3d; 
-}
-
-.cartao-face {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
-}
-
-.front {
-    background: linear-gradient(to top left, rgb(255, 123, 0), purple);
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.back {
-    background: linear-gradient(to top left, rgb(255, 123, 0), purple);
-    transform: rotateY(180deg);
+.dark-mode .info {
+    color: white;
 }
