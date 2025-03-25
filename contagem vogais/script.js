@@ -9,8 +9,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     inputText.addEventListener("input", function () {
         const text = inputText.value.toLowerCase();
-        const vogais = { 'a': 0, 'e': 0, 'i': 0, 'o': 0, 'u': 0 };
-        let total = 0;
+        const vogais = {
+            'a': 0, 'á': 0, 'à': 0, 'â': 0, 'ã': 0,
+            'e': 0, 'é': 0, 'è': 0, 'ê': 0,
+            'i': 0, 'í': 0, 'ì': 0, 'î': 0,
+            'o': 0, 'ó': 0, 'ò': 0, 'ô': 0, 'õ': 0,
+            'u': 0, 'ú': 0, 'ù': 0, 'û': 0
+        }; let total = 0;
 
         for (let char of text) {
             if (vogais.hasOwnProperty(char)) {
@@ -20,10 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         totalVogais.textContent = total;
-        contarA.textContent = vogais['a'];
-        contarB.textContent = vogais['e'];
-        contarI.textContent = vogais['i'];
-        contarO.textContent = vogais['o'];
-        contarU.textContent = vogais['u'];
+        contarA.textContent = vogais['a'] + vogais['á'] + vogais['à'] + vogais['â'] + vogais['ã'];
+        contarE.textContent = vogais['e'] + vogais['é'] + vogais['è'] + vogais['ê'];
+        contarI.textContent = vogais['i'] + vogais['í'] + vogais['ì'] + vogais['î'];
+        contarO.textContent = vogais['o'] + vogais['ó'] + vogais['ò'] + vogais['ô'] + vogais['õ'];
+        contarU.textContent = vogais['u'] + vogais['ú'] + vogais['ù'] + vogais['û'];
     });
 });
