@@ -1,0 +1,13 @@
+body {
+    background-color: gray;
+}
+
+.concluido {
+    color: green;
+    text-decoration: line-through;
+}
+
+.desconcluido {
+    color: black;
+    text-decoration: none;
+}
