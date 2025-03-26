@@ -41,7 +41,8 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
-    margin-left: 5px;
+    margin-left: 5px; 
+    margin-top: 10px;
 }
 
 button:hover {
@@ -64,6 +65,7 @@ fieldset {
     max-height: 60vh;
     overflow-y: auto;
     border: none;
+    margin-top: 30px;
 }
 
 #minhas-tarefas {
