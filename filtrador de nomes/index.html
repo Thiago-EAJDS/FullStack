@@ -4,35 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-widtgit h, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <input type="text" id="campoBusca" placeholder="Digite o nome do produto">
-    <select id="campoCategoria">
-    <option value="">Todas as categorias</option>
-    <option value="Periféricos">
-        Fone de ouvido | Preço: 20R$.
-        Teclado | Preço: 150R$.
-        Monitor | Preço: 250R$.
-        Fios gerais | Preço: 15R$.
-        Mouse | Preço: 10R$.
-        Carregador | Preço: 16R$.
-        Mousepad | Preço: 5R$.
-    </option>
-    <option value="Jogos">
-        Grand Theft Auto I | Preço: 20R$.
-        Grand Theft Auto II | Preço: 30R$.
-        Grand Theft Auto III | Preço: 40R$.
-        Grand Theft Auto IV | Preço: 50R$.
-        Grand Theft Auto V | Preço: 70R$.
-        Grand Theft Auto VI | Preço: 400R$.
-        The Elder Scrolls I | Preço: 15R$.
-        The Elder Scrolls II | Preço: 25R$.
-        The Elder Scrolls III | Preço: 35R$.
-        The Elder Scrolls IV | Preço: 45R$.
-        The Elder Scrolls V | Preço: 65R$.
-        The Elder Scrolls VI | Preço: 350R$.
-    </option>
-    </select>
-    <button></button>
+    <div class="container">
+        <h1>Filtrar Produtos</h1>
+    
+        <input type="text" id="campoBusca" placeholder="Digite o nome do produto..." oninput="filtrarProdutos()">
+    
+        <select id="categoriaFiltro" onchange="filtrarProdutos()">
+            <option value="">Todas Categorias</option>
+            <option value="Perifericos">Periféricos</option>
+            <option value="Jogos">Jogos</option>
+            <option value="Eletronicos">Eletrônicos</option>
+        </select>
+    
+        <button onclick="filtrarProdutos()">Filtrar</button>
+    
+        <div id="resultado"></div>
+    
+        <div id="infoExtras"></div>
+    </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>
